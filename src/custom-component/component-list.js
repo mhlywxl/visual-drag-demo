@@ -1,6 +1,6 @@
 // 公共样式
 export const commonStyle = {
-    rotate: 0, 
+    rotate: 0,
     opacity: 1,
 }
 
@@ -13,6 +13,27 @@ export const commonAttr = {
 
 // 编辑器左侧组件列表
 const list = [
+    {
+        component: 'v-line',
+        label: '直线',
+        propValue: '',
+        icon: 'wenben',
+        style: {
+            width: 200,
+            height: 1,
+            fontSize: 14,
+            fontWeight: 500,
+            lineHeight: '',
+            letterSpacing: 0,
+            textAlign: 'center',
+            color: '#000',
+            borderColor: '#000',
+            borderWidth: 1,
+            backgroundColor: '#000',
+            borderStyle: 'solid',
+            verticalAlign: 'middle',
+        },
+    },
     {
         component: 'v-text',
         label: '文字',
@@ -30,8 +51,8 @@ const list = [
         },
     },
     {
-        component: 'v-button', 
-        label: '按钮', 
+        component: 'v-button',
+        label: '按钮',
         propValue: '按钮',
         icon: 'button',
         style: {
@@ -47,17 +68,6 @@ const list = [
             textAlign: '',
             color: '',
             backgroundColor: '',
-        },
-    },
-    {
-        component: 'Picture', 
-        label: '图片', 
-        icon: 'tupian',
-        propValue: require('@/assets/title.jpg'),
-        style: {
-            width: 300,
-            height: 200,
-            borderRadius: '',
         },
     },
     {
@@ -79,6 +89,41 @@ const list = [
             backgroundColor: '',
             borderStyle: 'solid',
             verticalAlign: 'middle',
+        },
+    },
+    {
+        component: 'Picture',
+        label: '图片',
+        icon: 'tupian',
+        propValue: require('@/assets/title.jpg'),
+        style: {
+            width: 300,
+            height: 200,
+            borderRadius: '',
+        },
+    },
+    {
+        component: 'Picture',
+        label: '平开窗',
+        icon: 'tupian',
+        propValue: require('@/assets/pingkaichuang.png'),
+        class: 'row',
+        style: {
+            width: 411,
+            height: 566,
+            borderRadius: '',
+        },
+    },
+    {
+        component: 'Picture',
+        label: '四开推拉门',
+        icon: 'tupian',
+        propValue: require('@/assets/sikaituilamen.png'),
+        class: 'row',
+        style: {
+            width: 478,
+            height: 358,
+            borderRadius: '',
         },
     },
 ]

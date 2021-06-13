@@ -3,6 +3,7 @@ import Vue from 'vue'
 const components = [
     'Picture',
     'VText',
+    'VLine',
     'VButton',
     'Group',
     'RectShape',

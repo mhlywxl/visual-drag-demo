@@ -1,6 +1,7 @@
 <template>
     <div @dragstart="handleDragStart" class="component-list">
-        <div v-for="(item, index) in componentList" :key="index" class="list" draggable 
+        <div v-for="(item, index) in componentList" :key="index" class="list" draggable
+             :class="item.class"
         :data-index="index">
             <span class="iconfont" :class="'icon-' + item.icon"></span>
             <span>{{ item.label }}</span>
@@ -43,6 +44,11 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
+        &.row {
+          width: auto;
+          text-align:left;
+          justify-content:left;
+        }
 
         &:active {
             cursor: grabbing;
