@@ -111,7 +111,7 @@ const list = [
         style: {
             width: 411,
             height: 566,
-            borderRadius: '',
+            grade: '1',
         },
     },
     {
@@ -123,7 +123,8 @@ const list = [
         style: {
             width: 478,
             height: 358,
-            borderRadius: '',
+            grade: '1',
+            qty: 1,
         },
     },
 ]

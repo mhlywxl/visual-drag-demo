@@ -7,25 +7,9 @@
                 <el-color-picker v-else-if="key == 'color'" v-model="curComponent.style[key]"></el-color-picker>
                 <el-color-picker v-else-if="key == 'backgroundColor'" v-model="curComponent.style[key]"></el-color-picker>
                 <el-select v-else-if="selectKey.includes(key)" v-model="curComponent.style[key]">
-                    <template v-if="key == 'textAlign'">
+                    <template>
                         <el-option
-                            v-for="item in textAlignOptions"
-                            :key="item.value"
-                            :label="item.label"
-                            :value="item.value"
-                        ></el-option>
-                    </template>
-                    <template v-else-if="key == 'borderStyle'">
-                        <el-option
-                            v-for="item in borderStyleOptions"
-                            :key="item.value"
-                            :label="item.label"
-                            :value="item.value"
-                        ></el-option>
-                    </template>
-                    <template v-else>
-                        <el-option
-                            v-for="item in verticalAlignOptions"
+                            v-for="item in options[key]"
                             :key="item.value"
                             :label="item.label"
                             :value="item.value"
@@ -46,45 +30,57 @@ export default {
     data() {
         return {
             excludes: ['Picture', 'Group'], // 这些组件不显示内容
-            textAlignOptions: [
-                {
-                    label: '左对齐',
-                    value: 'left',
-                },
-                {
-                    label: '居中',
-                    value: 'center',
-                },
-                {
-                    label: '右对齐',
-                    value: 'right',
-                },
-            ],
-            borderStyleOptions: [
-                {
-                    label: '实线',
-                    value: 'solid',
-                },
-                {
-                    label: '虚线',
-                    value: 'dashed',
-                },
-            ],
-            verticalAlignOptions: [
-                {
-                    label: '上对齐',
-                    value: 'top',
-                },
-                {
-                    label: '居中对齐',
-                    value: 'middle',
-                },
-                {
-                    label: '下对齐',
-                    value: 'bottom',
-                },
-            ],
-            selectKey: ['textAlign', 'borderStyle', 'verticalAlign'],
+            options: {
+                textAlign: [
+                    {
+                        label: '左对齐',
+                        value: 'left',
+                    },
+                    {
+                        label: '居中',
+                        value: 'center',
+                    },
+                    {
+                        label: '右对齐',
+                        value: 'right',
+                    },
+                ],
+                borderStyle: [
+                    {
+                        label: '实线',
+                        value: 'solid',
+                    },
+                    {
+                        label: '虚线',
+                        value: 'dashed',
+                    },
+                ],
+                verticalAlign: [
+                    {
+                        label: '上对齐',
+                        value: 'top',
+                    },
+                    {
+                        label: '居中对齐',
+                        value: 'middle',
+                    },
+                    {
+                        label: '下对齐',
+                        value: 'bottom',
+                    },
+                ],
+                grade: [
+                    {
+                        label: '一级',
+                        value: '1',
+                    },
+                    {
+                        label: '二级',
+                        value: '2',
+                    },
+                ],
+            },
+            selectKey: ['textAlign', 'borderStyle', 'verticalAlign', 'grade'],
             map: {
                 left: 'x 坐标',
                 top: 'y 坐标',
@@ -103,6 +99,9 @@ export default {
                 opacity: '透明度',
                 textAlign: '左右对齐',
                 verticalAlign: '上下对齐',
+
+                grade: '等级',
+                qty: '数量',
             },
         }
     },
